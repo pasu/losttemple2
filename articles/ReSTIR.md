@@ -61,7 +61,7 @@ $$
 
 ![随着样本数量的增加，RIS算法收敛至目标分布](./images/ReSTIR/4_ris.gif)
 
-我们提到我们会用目标函数$f$来替代我们的目标分布$\hat{p}$。在渲染$\hat{p}(X)\approx f(x) = BSDF(X)\cdot L_e\left( X \right) \cdot G\left( X \right) \cdot {\color{blue} V\left( x_1\leftrightarrow x_2 \right) }$时我们会忽略渲染方程中Visibility这一项，因为这一项需要执行一次shadow ray，这个开销在实时中是无法接受的。另一个问题是该算法中，我们需要保存M个样本，才能获取每个样本对应的权重$\omega_i$，这个$O(M)$的空间复杂度对GPU也是不可接受的。这个问题需要借助Reservoir Sampling来解决。
+我们提到我们会用目标函数$f$来替代我们的目标分布$\hat{p}$。在渲染$\hat{p}(X)\approx = ρ\cdot L_e \cdot G \cdot {\color{blue} V }$时我们会忽略渲染方程中Visibility这一项，因为这一项需要执行一次shadow ray，这个开销在实时中是无法接受的。另一个问题是该算法中，我们需要保存M个样本，才能获取每个样本对应的权重$\omega_i$，这个$O(M)$的空间复杂度对GPU也是不可接受的。这个问题需要借助Reservoir Sampling来解决。
 
 ## WRS
 
