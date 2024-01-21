@@ -14,7 +14,10 @@
 - 基于3D高斯球的实时渲染（rendering）
 - 3D Gaussian的数据优化（training）
 
+![3DGS训练Pipeline。左侧为输入为点云数据，初始化后对应3D Gaussian的数据结构；右侧采用可微点云渲染，基于当前视角渲染成图片；对比Image和Ground Truth，中间则通过MLP优化数据。](./images/3DGS/pipeline.png)
 ## 3D Gaussian
+
+
 
 ## Rendering
 
